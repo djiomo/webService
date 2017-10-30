@@ -1,0 +1,6 @@
+C:\Users\loikd\dossierGit\projet3A\SmartWCFClient_2\SmartWcfService1\bin\SmartWcfService1.dll.config
+C:\Users\loikd\dossierGit\projet3A\SmartWCFClient_2\SmartWcfService1\bin\SmartWcfService1.dll
+C:\Users\loikd\dossierGit\projet3A\SmartWCFClient_2\SmartWcfService1\bin\SmartWcfService1.pdb
+C:\Users\loikd\dossierGit\projet3A\SmartWCFClient_2\SmartWcfService1\obj\Debug\SmartWcfService1.csproj.CoreCompileInputs.cache
+C:\Users\loikd\dossierGit\projet3A\SmartWCFClient_2\SmartWcfService1\obj\Debug\SmartWcfService1.dll
+C:\Users\loikd\dossierGit\projet3A\SmartWCFClient_2\SmartWcfService1\obj\Debug\SmartWcfService1.pdb

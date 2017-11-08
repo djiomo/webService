@@ -1,0 +1,14 @@
+C:\Users\simon\source\repos\SmartWCFClient\SmartWCFClient.WcfService\bin\SmartWCFClient.WcfService.dll.config
+C:\Users\simon\source\repos\SmartWCFClient\SmartWCFClient.WcfService\bin\SmartWCFClient.WcfService.dll
+C:\Users\simon\source\repos\SmartWCFClient\SmartWCFClient.WcfService\bin\SmartWCFClient.WcfService.pdb
+C:\Users\simon\source\repos\SmartWCFClient\SmartWCFClient.WcfService\obj\Debug\SmartWCFClient.WcfService.csprojResolveAssemblyReference.cache
+C:\Users\simon\source\repos\SmartWCFClient\SmartWCFClient.WcfService\obj\Debug\SmartWCFClient.WcfService.csproj.CoreCompileInputs.cache
+C:\Users\simon\source\repos\SmartWCFClient\SmartWCFClient.WcfService\obj\Debug\SmartWCFClient.WcfService.dll
+C:\Users\simon\source\repos\SmartWCFClient\SmartWCFClient.WcfService\obj\Debug\SmartWCFClient.WcfService.pdb
+C:\Users\tibor\Desktop\SmartWCFClient\SmartWCFClient.WcfService\bin\SmartWCFClient.WcfService.dll.config
+C:\Users\tibor\Desktop\SmartWCFClient\SmartWCFClient.WcfService\bin\SmartWCFClient.WcfService.dll
+C:\Users\tibor\Desktop\SmartWCFClient\SmartWCFClient.WcfService\bin\SmartWCFClient.WcfService.pdb
+C:\Users\tibor\Desktop\SmartWCFClient\SmartWCFClient.WcfService\obj\Debug\SmartWCFClient.WcfService.csprojResolveAssemblyReference.cache
+C:\Users\tibor\Desktop\SmartWCFClient\SmartWCFClient.WcfService\obj\Debug\SmartWCFClient.WcfService.csproj.CoreCompileInputs.cache
+C:\Users\tibor\Desktop\SmartWCFClient\SmartWCFClient.WcfService\obj\Debug\SmartWCFClient.WcfService.dll
+C:\Users\tibor\Desktop\SmartWCFClient\SmartWCFClient.WcfService\obj\Debug\SmartWCFClient.WcfService.pdb

@@ -7,17 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button x:Name="ButtonExecute" Content="Execute" HorizontalAlignment="Left" Margin="419,156,0,0" VerticalAlignment="Top" Width="53" Click="Button_Click"/>
-        <Label x:Name="LabelParam1" Content="Param1" HorizontalAlignment="Left" Margin="67,112,0,0" VerticalAlignment="Top" Width="114" Height="36" IsHitTestVisible="False"/>
-        <TextBox x:Name="TextBoxValeurParam1" HorizontalAlignment="Left" Height="36" Margin="237,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TextBox_TextChanged"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="241*"/>
+            <RowDefinition Height="80*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="ButtonExecute" Content="Execute" HorizontalAlignment="Left" Margin="419,10,0,0" VerticalAlignment="Top" Width="53" Click="Button_Click"/>
+        <Label x:Name="LabelParam1" Content="Param1" HorizontalAlignment="Left" Margin="67,112,0,0" VerticalAlignment="Top" Width="114" Height="36" IsHitTestVisible="False" Visibility="Hidden"/>
+        <TextBox x:Name="TextBoxValeurParam1" HorizontalAlignment="Left" Height="36" Margin="237,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TextBox_TextChanged" Visibility="Hidden"/>
         <Label x:Name="LabelMethod" Content="Select your method" HorizontalAlignment="Left" Margin="67,10,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="MethodesListBox" HorizontalAlignment="Left" Height="68" Margin="237,10,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="OnSelected"/>
-        <Label x:Name="LabelParam2" Content="Param2" HorizontalAlignment="Left" Margin="67,153,0,0" VerticalAlignment="Top" Width="114" Height="36"/>
-        <TextBox x:Name="TextBoxValeurParam2" HorizontalAlignment="Left" Height="36" Margin="237,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TextBox_TextChanged"/>
-        <Label x:Name="LabelParam3" Content="Param3" HorizontalAlignment="Left" Margin="67,189,0,0" VerticalAlignment="Top" Width="114" Height="36"/>
-        <TextBox x:Name="TextBoxValeurParam3" HorizontalAlignment="Left" Height="31" Margin="237,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TextBox_TextChanged"/>
-        <Label x:Name="LabelResult" Content="" HorizontalAlignment="Left" Margin="67,283,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.629,-0.71" Width="405"/>
-        <Label x:Name="LabelTestParam" Content="" HorizontalAlignment="Left" Margin="237,230,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="MethodesListBox" HorizontalAlignment="Left" Height="81" Margin="237,10,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="OnSelected"/>
+        <Label x:Name="LabelParam2" Content="Param2" HorizontalAlignment="Left" Margin="67,153,0,0" VerticalAlignment="Top" Width="114" Height="36" Visibility="Hidden"/>
+        <TextBox x:Name="TextBoxValeurParam2" HorizontalAlignment="Left" Height="36" Margin="237,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TextBox_TextChanged" Visibility="Hidden"/>
+        <Label x:Name="LabelParam3" Content="Param3" HorizontalAlignment="Left" Margin="67,189,0,0" VerticalAlignment="Top" Width="114" Height="36" Visibility="Hidden"/>
+        <TextBox x:Name="TextBoxValeurParam3" HorizontalAlignment="Left" Height="31" Margin="237,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TextBox_TextChanged" Visibility="Hidden"/>
+        <Label x:Name="LabelResult" Content="" HorizontalAlignment="Left" Margin="67,41.771,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.629,-0.71" Width="405" Grid.Row="1"/>
+        <Label x:Name="LabelTestParam" Content="" HorizontalAlignment="Left" Margin="237,230,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
 
     </Grid>
 </Window>

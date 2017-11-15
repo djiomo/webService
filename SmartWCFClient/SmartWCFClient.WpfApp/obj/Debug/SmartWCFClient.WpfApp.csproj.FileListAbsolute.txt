@@ -28,3 +28,6 @@ C:\Users\tibor\Desktop\SmartWCFClient\SmartWCFClient.WpfApp\obj\Debug\SmartWCFCl
 C:\Users\tibor\Desktop\SmartWCFClient\SmartWCFClient.WpfApp\obj\Debug\SmartWCFClient.WpfApp.csproj.CoreCompileInputs.cache
 C:\Users\tibor\Desktop\SmartWCFClient\SmartWCFClient.WpfApp\obj\Debug\SmartWCFClient.WpfApp.exe
 C:\Users\tibor\Desktop\SmartWCFClient\SmartWCFClient.WpfApp\obj\Debug\SmartWCFClient.WpfApp.pdb
+C:\Users\tibor\Desktop\SmartWCFClient\SmartWCFClient.WpfApp\bin\Debug\SmartWCFClient.WcfService.dll
+C:\Users\tibor\Desktop\SmartWCFClient\SmartWCFClient.WpfApp\bin\Debug\SmartWCFClient.WcfService.pdb
+C:\Users\tibor\Desktop\SmartWCFClient\SmartWCFClient.WpfApp\bin\Debug\SmartWCFClient.WcfService.dll.config

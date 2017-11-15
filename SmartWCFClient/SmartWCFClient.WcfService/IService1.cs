@@ -17,6 +17,9 @@ namespace SmartWCFClient.WcfService
         string GetData(int value);
 
         [OperationContract]
+        string GetIntAndString(int valueInt,string valueString);
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: ajoutez vos opérations de service ici

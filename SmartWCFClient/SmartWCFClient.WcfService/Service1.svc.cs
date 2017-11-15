@@ -17,6 +17,11 @@ namespace SmartWCFClient.WcfService
             return string.Format("You entered: {0}", value);
         }
 
+        public string GetIntAndString(int valueInt, string valueString)
+        {
+            return string.Format("You entered: {0}", valueInt, valueString);
+        }
+
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)

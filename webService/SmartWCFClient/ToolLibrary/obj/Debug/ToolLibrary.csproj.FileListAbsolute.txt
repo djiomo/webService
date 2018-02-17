@@ -1,0 +1,5 @@
+C:\Users\tibor\Desktop\webService\SmartWCFClient\ToolLibrary\bin\Debug\ToolLibrary.dll
+C:\Users\tibor\Desktop\webService\SmartWCFClient\ToolLibrary\bin\Debug\ToolLibrary.pdb
+C:\Users\tibor\Desktop\webService\SmartWCFClient\ToolLibrary\obj\Debug\ToolLibrary.csproj.CoreCompileInputs.cache
+C:\Users\tibor\Desktop\webService\SmartWCFClient\ToolLibrary\obj\Debug\ToolLibrary.dll
+C:\Users\tibor\Desktop\webService\SmartWCFClient\ToolLibrary\obj\Debug\ToolLibrary.pdb

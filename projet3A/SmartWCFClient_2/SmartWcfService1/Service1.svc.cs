@@ -12,27 +12,29 @@ namespace SmartWcfService1
     // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez Service1.svc ou Service1.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     public class Service1 : IService1
     {
-        public int Add(int value1, int value2)
+        private List<Human> humans = new List<Human>();
+
+        public Service1()
         {
-            return value1 + value2;
+            humans.Add(new Human() { FirstName = "Simon", LastName = "QUÉMÉNEUR", BirthDate = new DateTime(1981, 3, 23), Id = "1" });
+            humans.Add(new Human() { FirstName = "Loik", LastName = "DJIOMO", BirthDate = new DateTime(1995, 3, 3), Id = "2" });
+            humans.Add(new Human() { FirstName = "Thibault", LastName = "SALAUN", BirthDate = new DateTime(1994, 12, 10), Id = "3" });
         }
 
-        public string GetData(int value)
+        public Human AddHuman(Human human)
         {
-            return string.Format("You entered: {0}", value);
+           return human;
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public Human GetHuman(string id)
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            return humans.Where(h => h.Id == id).SingleOrDefault();
         }
+
+        public List<Human> GetHumans(DateTime fromDate, DateTime toDate)
+        {
+            return humans.Where(h => fromDate != null ? h.BirthDate >= fromDate : false && toDate != null ? h.BirthDate <= toDate : false).ToList();
+        }
+
     }
 }

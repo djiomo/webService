@@ -15,18 +15,24 @@ namespace SmartWCFClient_2.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/SmartWcfService1")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Human", Namespace="http://schemas.datacontract.org/2004/07/SmartWcfService1")]
     [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Human : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BoolValueField;
+        private System.DateTime BirthDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StringValueField;
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -39,27 +45,53 @@ namespace SmartWCFClient_2.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool BoolValue {
+        public System.DateTime BirthDate {
             get {
-                return this.BoolValueField;
+                return this.BirthDateField;
             }
             set {
-                if ((this.BoolValueField.Equals(value) != true)) {
-                    this.BoolValueField = value;
-                    this.RaisePropertyChanged("BoolValue");
+                if ((this.BirthDateField.Equals(value) != true)) {
+                    this.BirthDateField = value;
+                    this.RaisePropertyChanged("BirthDate");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StringValue {
+        public string FirstName {
             get {
-                return this.StringValueField;
+                return this.FirstNameField;
             }
             set {
-                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
-                    this.StringValueField = value;
-                    this.RaisePropertyChanged("StringValue");
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdField, value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
                 }
             }
         }
@@ -78,23 +110,23 @@ namespace SmartWCFClient_2.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        string GetData(int value);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetHumans", ReplyAction="http://tempuri.org/IService1/GetHumansResponse")]
+        SmartWCFClient_2.ServiceReference1.Human[] GetHumans(System.DateTime from, System.DateTime to);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetHumans", ReplyAction="http://tempuri.org/IService1/GetHumansResponse")]
+        System.Threading.Tasks.Task<SmartWCFClient_2.ServiceReference1.Human[]> GetHumansAsync(System.DateTime from, System.DateTime to);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        SmartWCFClient_2.ServiceReference1.CompositeType GetDataUsingDataContract(SmartWCFClient_2.ServiceReference1.CompositeType composite);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetHuman", ReplyAction="http://tempuri.org/IService1/GetHumanResponse")]
+        SmartWCFClient_2.ServiceReference1.Human GetHuman(string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<SmartWCFClient_2.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(SmartWCFClient_2.ServiceReference1.CompositeType composite);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetHuman", ReplyAction="http://tempuri.org/IService1/GetHumanResponse")]
+        System.Threading.Tasks.Task<SmartWCFClient_2.ServiceReference1.Human> GetHumanAsync(string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Add", ReplyAction="http://tempuri.org/IService1/AddResponse")]
-        int Add(int value1, int value2);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddHuman", ReplyAction="http://tempuri.org/IService1/AddHumanResponse")]
+        SmartWCFClient_2.ServiceReference1.Human AddHuman(SmartWCFClient_2.ServiceReference1.Human human);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Add", ReplyAction="http://tempuri.org/IService1/AddResponse")]
-        System.Threading.Tasks.Task<int> AddAsync(int value1, int value2);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddHuman", ReplyAction="http://tempuri.org/IService1/AddHumanResponse")]
+        System.Threading.Tasks.Task<SmartWCFClient_2.ServiceReference1.Human> AddHumanAsync(SmartWCFClient_2.ServiceReference1.Human human);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -124,28 +156,28 @@ namespace SmartWCFClient_2.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public string GetData(int value) {
-            return base.Channel.GetData(value);
+        public SmartWCFClient_2.ServiceReference1.Human[] GetHumans(System.DateTime from, System.DateTime to) {
+            return base.Channel.GetHumans(from, to);
         }
         
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
+        public System.Threading.Tasks.Task<SmartWCFClient_2.ServiceReference1.Human[]> GetHumansAsync(System.DateTime from, System.DateTime to) {
+            return base.Channel.GetHumansAsync(from, to);
         }
         
-        public SmartWCFClient_2.ServiceReference1.CompositeType GetDataUsingDataContract(SmartWCFClient_2.ServiceReference1.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
+        public SmartWCFClient_2.ServiceReference1.Human GetHuman(string id) {
+            return base.Channel.GetHuman(id);
         }
         
-        public System.Threading.Tasks.Task<SmartWCFClient_2.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(SmartWCFClient_2.ServiceReference1.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
+        public System.Threading.Tasks.Task<SmartWCFClient_2.ServiceReference1.Human> GetHumanAsync(string id) {
+            return base.Channel.GetHumanAsync(id);
         }
         
-        public int Add(int value1, int value2) {
-            return base.Channel.Add(value1, value2);
+        public SmartWCFClient_2.ServiceReference1.Human AddHuman(SmartWCFClient_2.ServiceReference1.Human human) {
+            return base.Channel.AddHuman(human);
         }
         
-        public System.Threading.Tasks.Task<int> AddAsync(int value1, int value2) {
-            return base.Channel.AddAsync(value1, value2);
+        public System.Threading.Tasks.Task<SmartWCFClient_2.ServiceReference1.Human> AddHumanAsync(SmartWCFClient_2.ServiceReference1.Human human) {
+            return base.Channel.AddHumanAsync(human);
         }
     }
 }

@@ -7,42 +7,42 @@
       <xsd:import schemaLocation="http://localhost:61207/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SmartWcfService1" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_GetData_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetData" />
+  <wsdl:message name="IService1_GetHumans_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHumans" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetData_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  <wsdl:message name="IService1_GetHumans_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHumansResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  <wsdl:message name="IService1_GetHuman_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHuman" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  <wsdl:message name="IService1_GetHuman_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHumanResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_Add_InputMessage">
-    <wsdl:part name="parameters" element="tns:Add" />
+  <wsdl:message name="IService1_AddHuman_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddHuman" />
   </wsdl:message>
-  <wsdl:message name="IService1_Add_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddResponse" />
+  <wsdl:message name="IService1_AddHuman_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddHumanResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
-    <wsdl:operation name="GetData">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    <wsdl:operation name="GetHumans">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetHumans" message="tns:IService1_GetHumans_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetHumansResponse" message="tns:IService1_GetHumans_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    <wsdl:operation name="GetHuman">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetHuman" message="tns:IService1_GetHuman_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetHumanResponse" message="tns:IService1_GetHuman_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Add">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Add" message="tns:IService1_Add_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddResponse" message="tns:IService1_Add_OutputMessage" />
+    <wsdl:operation name="AddHuman">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddHuman" message="tns:IService1_AddHuman_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddHumanResponse" message="tns:IService1_AddHuman_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetData">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+    <wsdl:operation name="GetHumans">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetHumans" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -50,8 +50,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+    <wsdl:operation name="GetHuman">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetHuman" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -59,8 +59,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Add">
-      <soap:operation soapAction="http://tempuri.org/IService1/Add" style="document" />
+    <wsdl:operation name="AddHuman">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddHuman" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -14,36 +14,54 @@ namespace SmartWcfService1
     {
 
         [OperationContract]
-        string GetData(int value);
+        [WebGet(UriTemplate = "/Humans/?from={from}&to={to}")]
+        List<Human> GetHumans(DateTime from, DateTime to);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        [WebGet(UriTemplate = "/Humans/{id}")]
+        Human GetHuman(string id);
         [OperationContract]
-        int Add(int value1, int value2);
+        // [WebGet(UriTemplate = "/Humans/AddHumain/?human={human}")]
 
-        // TODO: ajoutez vos opérations de service ici
+        [WebInvoke(Method = "POST", UriTemplate = "/Humans/addHumain")]
+        Human AddHuman(Human human);
+        
+
+
+
+
+        ////[OperationContract]
+        ////[WebGet(UriTemplate = "/Humans/{id}")]
+        //Human AddHuman(string FisrtName, string lastName);
+        //Human DeleteHuman(string FisrtName, string lastName);
     }
 
 
     // Utilisez un contrat de données comme indiqué dans l'exemple ci-après pour ajouter les types composites aux opérations de service.
     [DataContract]
-    public class CompositeType
+    public class Human
     {
-        bool boolValue = true;
-        string stringValue = "Hello ";
 
         [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
+        public string Id { get; set; }
 
         [DataMember]
-        public string StringValue
+        public string FirstName { get; set; }
+
+        [DataMember]
+        public string LastName { get; set; }
+
+        [DataMember]
+        public DateTime BirthDate { get; set; }
+
+       // public IEnumerable<Human> Children { get; set; }
+
+
+        public Human()
         {
-            get { return stringValue; }
-            set { stringValue = value; }
+           // Children = new List<Human>() { new Human() { FirstName = "enfant 1", LastName = "toto" }, new Human() { FirstName = "enfant 2", LastName = "titi" } };
         }
+
+       
     }
 }

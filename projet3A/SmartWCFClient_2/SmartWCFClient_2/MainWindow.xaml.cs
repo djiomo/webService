@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartWCFClient_2.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -27,76 +28,58 @@ namespace SmartWCFClient_2
         public MainWindow()
         {
             InitializeComponent();
-            MethodInfo[]methods=typeof(ServiceReference1.IService1).GetMethods();
-            var methods_final=methods.Where(m=>!m.Name.EndsWith("Async"));
-            foreach(var m in methods_final)
-            {
-                listBox.Items.Add(m.Name);
-            }
-           
-            
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            textblock1.Text = "";
-            string str = (string)listBox.SelectedItem;
-            ServiceReference1.Service1Client test = new ServiceReference1.Service1Client(); 
-            
+            textBlock1.Text="Pour ajouter un service :"+
+                "\r\n"+".Sélectionnez \"Ajouter un service\" dans le menu Fichier ou le menu contextuel de \"Mes projets de service\"." +
+                 "\r\n" + ".Entrez l'adresse des métadonnées du service dans la zone de saisie, puis cliquez sur \"OK\"." + "\r\n" + "\r\n" +
+                "Pour tester une opération de service :" +
+                 "\r\n" + "Double - cliquez sur l'opération à tester à partir de l'arborescence du volet gauche" +
+                  "\r\n" + ".Une nouvelle page d'onglets s'affiche dans le volet gauche." +
+                 "\r\n" + "Entrez la valeur des paramètres dans la zone Requête du volet droit." +
+                  "\r\n" + ".Cliquez sur le bouton \"Appeler\"";
+            ServiceReference1.Service1Client test = new ServiceReference1.Service1Client();         
+            Uri uri = test.Endpoint.Address.Uri;
+            TreeViewItem child = new TreeViewItem();
+            child.Header = uri;
+            WsTreeView.Items.Add(child);
             MethodInfo[] methods = typeof(ServiceReference1.IService1).GetMethods();
-            var method_final = methods.Where(m => m.Name.Equals(str));
-            var method = method_final.First();
-            ParameterInfo[] parameteres = method.GetParameters();
-            int nbrPara = parameteres.Length;
-            
-            if (nbrPara == 1)
+            foreach(var m in methods)
             {
-                
-                Type T = parameteres[0].ParameterType;
-                var t = Convert.ChangeType(textbox1.Text, T);
-                var parametre = new object[] { t };
-                var result = method.Invoke(test, parametre);
-                textblock1.Text = (string)result;
+                TreeViewItem it = new TreeViewItem();
+                it.Header = m.Name;
+                child.Items.Add(it);
+
+
+                it.MouseDoubleClick += It_MouseDoubleClick;
             }
-
-            if (nbrPara == 2)
-            {
-                Type T1 = parameteres[0].ParameterType;
-                Type T2 = parameteres[1].ParameterType;
-                var t1 = Convert.ChangeType(textbox1.Text, T1);
-                var t2 = Convert.ChangeType(textbox2.Text, T2);
-                var parametre = new object[] { t1,t2 };
-                var result = method.Invoke(test, parametre);
-                textblock1.Text =  result.ToString();
-
-            }
-           
-           
-            
-            
-
-            
-     
+            Console.WriteLine(uri);
+      
         }
 
-       
-
-        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void It_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            textblock1.Text = " ";
-            int i = 0;
-            string str = (string)listBox.SelectedItem;
+           
+            var tvi = sender as TreeViewItem;
+            TabItem t = new TabItem();
+            t.Header = tvi.Header;
             MethodInfo[] methods = typeof(ServiceReference1.IService1).GetMethods();
-            var method_final = methods.Where(m => m.Name.Contains(str));
+            var method_final = methods.Where(m => m.Name.Equals(tvi.Header));
             var method = method_final.First();
-            ParameterInfo[] parametres = method.GetParameters();
+            ParameterInfo[] parameters = method.GetParameters();
+            List<MyParameterInfo> listMyParameterInfo = parameters.Select(p => new MyParameterInfo(p)).ToList();
+            UserControl1 user = new UserControl1(listMyParameterInfo,tvi.Header.ToString());
+            t.Content = user;
+            tabControl1.Items.Add(t);
+            tabControl1.Items.Refresh();
 
-            foreach (var p in parametres)
-            {
-                textblock1.Text = "param " + ": " + p.ToString() + "\r\n" + textblock1.Text + "\r\n";
-                i = i + 1;
-            }
         }
+
+        private void menuItemQuitter(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+
+        }
+
+      
+
     }
 }

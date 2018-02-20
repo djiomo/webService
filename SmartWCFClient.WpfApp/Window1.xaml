@@ -1,0 +1,20 @@
+﻿<Window x:Name="WindowAjouterService" x:Class="SmartWCFClient.WpfApp.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SmartWCFClient.WpfApp"
+        mc:Ignorable="d"
+        Title="Ajouter un service" Height="132.558" Width="449.502">
+    <Grid x:Name="GridAjouterUnService">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="353*"/>
+            <ColumnDefinition Width="90*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="ButtonOK" Content="OK" HorizontalAlignment="Left" Margin="10.137,10,0,0" VerticalAlignment="Top" Width="70" Click="ButtonOK_Click" Height="20" Grid.Column="1"/>
+        <Button x:Name="ButtonAnnuler" Content="Annuler" HorizontalAlignment="Left" Margin="10.137,35,0,0" VerticalAlignment="Top" Width="70" Grid.Column="1"/>
+        <Label x:Name="LabelEntrerURL" Content="Veuillez entrer l'adresse URL du fichier wsdl du service :" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.366,-0.197" Width="348" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="ComboBoxURL" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Width="343" Grid.ColumnSpan="2" IsEditable="True"/>
+
+    </Grid>
+</Window>

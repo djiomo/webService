@@ -1,0 +1,47 @@
+﻿<UserControl x:Name="UserControlURL" x:Class="SmartWCFClient.WpfApp.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SmartWCFClient.WpfApp"
+             mc:Ignorable="d" d:DesignWidth="498.339" Foreground="Black" Background="White" Height="313.953"
+             >
+    <Grid HorizontalAlignment="Left" Height="299" VerticalAlignment="Top" Width="498">
+        <Label Content="Requête" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Démarrer un nouveau proxy" HorizontalAlignment="Left" Margin="195,154,0,0" VerticalAlignment="Top"/>
+        <Button Content="Appeler" HorizontalAlignment="Left" Margin="413,150,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Réponse" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.527,-0.016"/>
+        <DataGrid x:Name="DataGridRequete" HorizontalAlignment="Left" Height="100" Margin="10,36,0,0" VerticalAlignment="Top" Width="478">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nom" Width="160"/>
+                <DataGridTextColumn Header="Valeur" Width="160"/>
+                <DataGridTextColumn Header="Type" Width="160"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="DataGridReponse" HorizontalAlignment="Left" Height="100" Margin="10,182,0,0" VerticalAlignment="Top" Width="478">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nom" Binding="{Binding Titi.Name}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Valeur" Binding="{Binding ValueTest}" IsReadOnly="False"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding Titi.ParameterType}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TabControl HorizontalAlignment="Left" Height="24" Margin="10,287,0,-12" VerticalAlignment="Top" Width="199" RenderTransformOrigin="0.619,-0.154">
+            <TabItem Header="Formaté">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="XML">
+                <Grid Background="#FFE5E5E5" Margin="0,-307,-0.2,84" RenderTransformOrigin="0.5,0.5">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,35 @@
+﻿<Window x:Name="WindowMain" x:Class="SmartWCFClient.WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SmartWCFClient.WpfApp"
+        mc:Ignorable="d"
+        Title="Client test WCF" Width="608.749" ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight">
+    <Grid x:Name="GridClientTest" Margin="0,0,0.4,-0.2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="505*"/>
+            <ColumnDefinition Width="97*"/>
+        </Grid.ColumnDefinitions>
+        <Menu x:Name="MenuBarreFichierOutilsAide" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="600" Grid.ColumnSpan="2">
+            <MenuItem x:Name="MenuItemFichier" Header="Fichier" Height="30" Width="60">
+                <MenuItem Header="Ajouter" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="MenuItemOutils" Header="Outils" Height="30" Width="60"/>
+            <MenuItem x:Name="MenuItemAide" Header="Aide" Height="30" Width="100"/>
+        </Menu>
+        <TreeView x:Name="TreeViewWebService" HorizontalAlignment="Left" Height="281" Margin="0,30,0,0" VerticalAlignment="Top" Width="209">
+            <TreeViewItem x:Name="TreeViewItemProjets" Header="Mes projets de service" Height="22" Width="152" HorizontalAlignment="Left" MouseDoubleClick="TreeViewItem_MouseDoubleClick"/>
+        </TreeView>
+        <TabControl x:Name="TabControlDemarrage" HorizontalAlignment="Left" Height="286" Margin="214,35,0,0" VerticalAlignment="Top" Width="388" Grid.ColumnSpan="2">
+            <TabItem Header="Page de démarrage">
+                <Grid x:Name="GridTabControlDemarrage" Background="#FFE5E5E5">
+                    <TextBlock x:Name="TextBlockTutorial" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Pour ajouter un service: &#xA; - Sélectionnez &quot;Ajouter un service&quot; dans le menu Fichier ou le menu contextuel de &quot;Mes projets de service&quot;. &#xA; - Entrez l'adresse des métadonnées du service dans la zone de saisie, puis cliquez sur &quot;OK&quot;. &#xA;&#xA;Pour tester une opération de service :&#xA;- Double-cliquez sur l'opération à tester à partir de l'arborescence du volet gauche.&#xA;- Une nouvelle page d'onglets s'affiche dans le volet gauche.&#xA;- Entrez la valeur des paramètres dans la zone Demande du volet droit.&#xA;- Cliquez sur le bouton &quot;Appeler&quot;" VerticalAlignment="Top"/>
+                    <ListBox x:Name="MethodesListBox" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+
+
+</Window>
